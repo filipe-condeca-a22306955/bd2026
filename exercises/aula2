@@ -1,0 +1,52 @@
+/* SELECT * FROM production.products;
+SELECT product_name, model_year, list_price FROM production.products
+SELECT * FROM production.categories;
+SET IDENTITY_INSERT production.categories ON; 
+INSERT INTO production.categories(category_id,category_name) VALUES (8, 'Hybrid Bikes')
+SELECT * FROM production.categories;
+UPDATE production.categories SET category_name = 'Multi-Hybrid Bikes' WHERE category_id = 8
+SELECT * FROM production.categories;
+
+
+DELETE FROM production.categories WHERE category_id = 8
+SELECT * FROM production.categories;
+
+ex 1
+SELECT *
+FROM sales.stores;
+
+
+ex2
+SELECT * FROM production.brands;
+SELECT brand_name FROM production.brands;
+
+3
+SELECT * FROM sales.customers;
+SELECT customer_id, first_name, last_name 
+FROM sales.customers 
+WHERE city = 'Houston';
+
+
+
+4
+SELECT *
+FROM sales.customers
+WHERE city='Texas' OR city='California';
+
+
+5
+SELECT * 
+FROM production.products as PP
+WHERE list_price>1500;
+
+
+6
+SELECT product_name
+FROM production.products
+WHERE model_year>2017 AND list_price<1000;
+
+*/
+
+SELECT product_name
+FROM production.products
+WHERE (model_year=2017 OR model_year=2018) AND (list_price<1250 AND list_price>750);
