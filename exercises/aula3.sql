@@ -82,6 +82,46 @@ WHERE zip_code = 95060 OR zip_code = 75088
 SELECT * 
 FROM sales.staffs
 WHERE email LIKE '%serrano%'
+CREATE DATABASE BikeStoresPlus;
+SELECT * FROM sys.databases;
+
+USE BikeStoresPlus;
+SELECT * FROM BikeStoresPlus.INFORMATION_SCHEMA; // mal
+
+
+CREATE SCHEMA CategoriasDois;
+CREATE SCHEMA "marketing";
+SELECT * FROM sys.schemas;
+
+USE BikeStoresPlus
+CREATE TABLE marketing.products(
+
+    product_id INT,
+    product_name VARCHAR (255)
+
+)
+
+INSERT INTO marketing.products(product_name) VALUES ('Biklas Turbo')
+INSERT INTO marketing.products(product_id, product_name) VALUES (1,'produtoEspecial')
+INSERT INTO marketing.products(product_id, product_name) VALUES (1,'produtoEspecial')
+
+
+CREATE TABLE CategoriasDois.products(
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR (255) NOT NULL,
+    brand_id INT NOT NULL,
+    category_id INT NOT NULL,
+    model_year SMALLINT NOT NULL,
+    list_price DECIMAL (10, 2) NOT NULL,
+);
+
+
+INSERT INTO CategoriasDois.products(product_id, product_name, brand_id, category_id, model_year, list_price) 
+VALUES (1,'produtoEspecial', 5, 3, 2000, 100)
+SELECT * FROM CategoriasDois.products;
 */
+
+USE BikeStoresPlus
+
 
 
