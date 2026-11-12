@@ -30,13 +30,8 @@ CursoID INT,
 FOREIGN KEY (CursoID) REFERENCES Cursos(CursoID) );
 */
 
-USE Datawarehouse
+USE BikeStores
+SELECT production.products.product_id, production.categories.category_name
+FROM production.products
+INNER JOIN production.categories ON products.category_id=categories.category_id;
 
-CREATE TABLE Cursos (
-CursoID INT PRIMARY KEY,
-);
-
-CREATE TABLE Matriculas (
-AlunoID INT,
-CursoID INT,
-FOREIGN KEY (CursoID) REFERENCES Cursos(CursoID) );
